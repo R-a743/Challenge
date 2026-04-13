@@ -1,0 +1,22 @@
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-family: sans-serif;
+
+  &--primary {
+    background-color: #6366f1;
+    color: white;
+    &:hover { opacity: 0.9; transform: translateY(-2px); }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid #6366f1;
+    color: #6366f1;
+    &:hover { background-color: #6366f1; color: white; }
+  }
+}
