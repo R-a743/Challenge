@@ -1,0 +1,12 @@
+$primary: #6366f1;
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1f2937;
+  --transition: all 0.3s ease;
+}
+
+[data-theme='dark'] {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+}

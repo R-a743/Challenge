@@ -1,25 +1,40 @@
+import { useState, useEffect } from 'react';
 import Button from './components/Button/Button';
+import './index.scss'; 
 
 function App() {
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
   return (
     <div style={{ 
       padding: '100px', 
       textAlign: 'center', 
-      backgroundColor: '#f5f5f5', 
-      minHeight: '100vh' 
+      minHeight: '100vh',
+      backgroundColor: 'var(--bg-color)',
+      color: 'var(--text-color)',
+      transition: 'var(--transition)'
     }}>
-      <h1 style={{ color: '#333', marginBottom: '30px' }}>
-challenge
-      </h1>
-      
-      <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
-        <Button variant="primary">Ana Buton</Button>
-        <Button variant="outline">Vazgeç</Button>
+      <div style={{ marginBottom: '20px' }}>
+        <Button variant="outline" onClick={toggleTheme}>
+          {theme === 'light' ? '🌙 Gece Modu' : '☀️ Gündüz Modu'}
+        </Button>
       </div>
+
+      <h1>Meydan Okuma Başladı! ☄️</h1>
+      <p>(Bu bileşen artık Dark Mode destekliyor)</p>
       
-      <p style={{ marginTop: '20px', color: '#666' }}>
-        (Reusable Component) 
-      </p>
+      <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', marginTop: '20px' }}>
+        <Button variant="primary">Ürünü İncele</Button>
+        <Button variant="outline">Sepete Ekle</Button>
+      </div>
     </div>
   );
 }
