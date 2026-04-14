@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
+import Modal from './components/Modal/Modal';
 import Button from './components/Button/Button';
 import Input from './components/Input/Input';
 import Card from './components/Card/Card';
 import './index.scss';
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
@@ -33,9 +36,29 @@ function App() {
       </div>
 
       <h1>Meydan Okuma Başladı! 🚀</h1>
-      <p style={{ marginBottom: '40px' }}>Tüm bileşenler artık bir arada ve hizalı.</p>
+      <p style={{ marginBottom: '30px', opacity: 0.8 }}>
+        Tebrikler, tüm bileşenleri başarıyla bağladın!
+      </p>
 
     
+      <div style={{ marginBottom: '50px' }}>
+        <Button 
+          onClick={() => setIsModalOpen(true)}
+          style={{ padding: '12px 30px' }}
+        >
+          Modalı Aç ✨
+        </Button>
+      </div>
+
+    
+      <div style={{ maxWidth: '400px', margin: '0 auto 40px auto' }}>
+        <Input 
+          label="İletişim" 
+          placeholder="E-posta adresinizi girin..." 
+        />
+      </div>
+
+
       <div style={{ 
         display: 'grid', 
         gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
@@ -46,26 +69,32 @@ function App() {
       }}>
         <Card 
           icon="⚡" 
-          title="Hızlı Performans" 
-          description="Vite sayesinde saniyeler içinde geliştirme yapmaya başla." 
+          title="Hızlı Geliştirme" 
+          description="Vite ile React projeleri ışık hızında." 
         />
         <Card 
-          icon="✨" 
-          title="Şık Tasarım" 
-          description="SCSS modülleri ve modern CSS teknikleri ile göz alıcı bir görünüm sağlıyoruz. Bu kartın açıklaması uzun olsa bile diğerleriyle boyu aynı kalacak!" 
+          icon="🎨" 
+          title="Modern Tasarım" 
+          description="SCSS ve CSS Variables ile tam kontrol." 
         />
         <Card 
-          icon="📱" 
-          title="Responsive" 
-          description="Her cihazda, her ekranda kusursuz bir kullanıcı deneyimi." 
+          icon="🛡️" 
+          title="Güçlü Tip Yapısı" 
+          description="TypeScript ile hataları anında yakalıyoruz." 
         />
       </div>
 
-    
-      <div style={{ maxWidth: '400px', margin: '0 auto', border: '1px solid #ddd', padding: '30px', borderRadius: '15px' }}>
-        <Input label="Bize Katıl" placeholder="E-posta adresini gir..." />
-        <Button style={{ width: '100%', marginTop: '10px' }}>Abone Ol</Button>
-      </div>
+  
+      <Modal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        title="Harika İş!"
+      >
+        <div style={{ textAlign: 'left' }}>
+          <p>Şu an tüm bileşenlerin (Button, Input, Card, Modal) hatasız çalışıyor.</p>
+          <p style={{ marginTop: '10px', color: '#4CAF50', fontWeight: 'bold' }}> Tebrikler! meydan okuma görevini başarıyla tamamladın! </p>
+        </div>
+      </Modal>
 
     </div>
   );
