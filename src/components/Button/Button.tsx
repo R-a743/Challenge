@@ -1,16 +1,21 @@
+// src/components/Button/Button.tsx
+
+import React from 'react'; 
 import styles from './Button.module.scss';
 
 interface ButtonProps {
   children: React.ReactNode;
-  variant?: 'primary' | 'outline';
   onClick?: () => void;
+  variant?: 'primary' | 'secondary' | 'outline';
+  style?: React.CSSProperties; 
 }
 
-const Button = ({ children, variant = 'primary', onClick }: ButtonProps) => {
+const Button = ({ children, onClick, variant = 'primary', style }: ButtonProps) => {
   return (
     <button 
-      className={`${styles.btn} ${styles[`btn--${variant}`]}`} 
+      className={`${styles.button} ${styles[variant]}`} 
       onClick={onClick}
+      style={style} 
     >
       {children}
     </button>
