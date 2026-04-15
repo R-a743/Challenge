@@ -1,4 +1,4 @@
-# 🚀 TechLanding Challenge - High Performance UI
+#  Challenge - High Performance UI
 
 Bu proje, modern web standartları ve maksimum performans hedefleri doğrultusunda geliştirilmiş profesyonel bir landing page çalışmasıdır.
 
@@ -32,4 +32,9 @@ Proje geliştirilirken aşağıdaki mimari kararlar uygulanmıştır:
 - **TypeScript**
 - **SCSS Modules**
 - **Vite**
-- **Framer Motion** (Animasyonlar için)
+- **Framer Motion**
+
+## 🛠️ Kurulum
+1. Projeyi klonlayın: `git clone ...`
+2. Bağımlılıkları yükleyin: `npm install`
+3. Projeyi çalıştırın: `npm run dev`
