@@ -1,73 +1,35 @@
-# React + TypeScript + Vite
+# 🚀 TechLanding Challenge - High Performance UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, modern web standartları ve maksimum performans hedefleri doğrultusunda geliştirilmiş profesyonel bir landing page çalışmasıdır.
 
-Currently, two official plugins are available:
+## 🔗 Linkler
+- **Canlı Demo:** [https://challenge-sigma-six.vercel.app](https://challenge-sigma-six.vercel.app)
+- **GitHub Repo:** [https://github.com/R-a743/Challenge](https://github.com/R-a743/Challenge)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📊 Lighthouse Raporu
+Proje, Google Lighthouse testlerinde yüksek performans ve en iyi uygulama standartları (Best Practices) hedeflenerek optimize edilmiştir. Tüm kategorilerde **"Yeşil Alan" (90+)** skorları elde edilmiştir.
 
-## React Compiler
+- **Performans:** 90+
+- **Erişilebilirlik:** 100
+- **En İyi Uygulamalar:** 100
+- **SEO:** 100
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<img width="1891" height="912" alt="Ekran görüntüsü 2026-04-15 222411" src="https://github.com/user-attachments/assets/1361f454-0354-486a-9ccd-26330b4b90ef" />
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🏗️ Mimari ve Teknik Notlar
+Proje geliştirilirken aşağıdaki mimari kararlar uygulanmıştır:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Bileşen Tabanlı Mimari:** Tüm UI öğeleri (Modal, Accordion, Button vb.) kendi klasörlerinde, mantıksal ve stil dosyalarıyla izole edilerek modüler bir yapıda kurgulanmıştır.
+- **TypeScript:** Kod güvenliğini sağlamak ve hata payını minimize etmek amacıyla tüm proje TypeScript ile geliştirilmiştir.
+- **SCSS Modules & BEM:** Stil çakışmalarını önlemek için SCSS Modules kullanılmış, isimlendirme standartı olarak BEM (Block Element Modifier) tercih edilmiştir.
+- **Tema Yönetimi:** Dark/Light Mode geçişi, CSS değişkenleri (CSS Variables) ve `data-theme` attribute yapısı kullanılarak performanslı bir şekilde sağlanmıştır.
+- **Erişilebilirlik (A11y):** Semantic HTML elementleri ve ARIA etiketleri kullanılarak ekran okuyucu uyumluluğu en üst seviyeye çıkarılmıştır.
+- **Performans Optimizasyonu:** Gereksiz render'lar önlenmiş, görsel optimizasyonları ve modern tarayıcı standartları (Vite build) uygulanmıştır.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Kullanılan Teknolojiler
+- **React 18**
+- **TypeScript**
+- **SCSS Modules**
+- **Vite**
+- **Framer Motion** (Animasyonlar için)
